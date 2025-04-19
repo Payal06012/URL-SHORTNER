@@ -3,7 +3,7 @@ import {readFile, writeFile} from "fs/promises";
 import path from "path";
 import crypto from "crypto";
 
-const PORT = 3002;
+const PORT = 10000;
 const DATA_FILE = path.join("data","links.json");
 
 console.log(crypto.randomBytes(4).toString("hex"));
@@ -118,36 +118,5 @@ const server = http.createServer(async (req,res) => {
     server.listen(PORT,() => {
         console.log(`Server running at http://localhost:${PORT}`);
     })
-
-
-// const server = http.createServer(async (req,res) => {
-// if(req.method === 'GET'){
-//     if(req.url === '/'){
-// try{
-// const data = await readFile(path.join("public","url.html"));
-// res.writeHead(200,{"Content-Type": "text/html"});
-// res.end(data);
-
-// }catch(error){
-//     res.writeHead(404,{"Content-Type": "text/html"});
-//     res.end("404 page not found");
-// }
-//     }
-// }
-// if(req.method === 'GET'){
-//     if(req.url === '/url.css'){
-// try{
-// const data = await readFile(path.join("public","url.css"));
-// res.writeHead(200,{"Content-Type": "text/css"});
-// res.end(data);
-
-// }catch(error){
-//     res.writeHead(404,{"Content-Type": "text/css"});
-//     res.end("404 page not found");
-// }
-//     }
-// }
-//     }
-// )
 
 
